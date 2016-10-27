@@ -1,0 +1,8 @@
+%input.slicer{'type' => 'button', 'value' => 'Get'}
+%table
+	%tr#options_row
+		- User::QUERIYABLE_FIELDS.each do |field|
+			%td
+				%p
+					%h3.switch_order{'data-field-name' => field}= link_to field, '#'
+					%input.filter_option{ 'type' => 'text', 'size' => 10, 'data-field-name' => field }
